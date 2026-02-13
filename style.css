@@ -53,8 +53,6 @@ body {
   height: 75px;
   background: #c48b9f;
   position: absolute;
-  top: calc(80px + 20px);   /* dentro del camino */
-  left: calc(100% - 80px - 70px); /* borde derecho del camino */
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
@@ -91,31 +89,28 @@ body {
 }
 
 /* ===== CONTROLES MÓVIL ===== */
-#mobileControls {
-  position: absolute;
+#mobile-controls {
+  position: fixed;
   bottom: 20px;
-  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
   display: none;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
+  z-index: 999;
 }
 
-#mobileControls button {
+#mobile-controls button {
   font-size: 24px;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
+  padding: 10px 14px;
+  margin: 5px;
+  border-radius: 12px;
   border: none;
-  background: rgba(255,255,255,0.9);
-  color: #a45c72;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  cursor: pointer;
+  background: #f4a7b9;
+  color: white;
 }
 
 /* Hover solo para PC */
 @media (hover: hover) {
-  #mobileControls button:hover {
+  #mobile-controls button:hover {
     transform: scale(1.1);
   }
 }
