@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para ti 🤍</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="deviceSelect">
+  <div id="deviceBox">
+    <h2>¿Desde dónde estás entrando?</h2>
+
+    <button id="pcBtn">💻 PC</button>
+    <button id="mobileBtn">📱 Móvil</button>
+  </div>
+</div>
+
+<!-- ESCENA JUEGO -->
+<div id="game">
+  <div id="path"></div>
+
+  <div id="player"></div>
+
+  <div id="door">
+    <span id="doorHint">E</span>
+  </div>
+
+  <p id="hint">Usa W A S D para moverte</p>
+
+  <!-- CONTROLES MÓVIL -->
+  <div id="mobileControls" class="hidden">
+    <button data-dir="up">⬆️</button>
+    <div>
+      <button data-dir="left">⬅️</button>
+      <button data-dir="down">⬇️</button>
+      <button data-dir="right">➡️</button>
+    </div>
+  </div>
+</div>
+
+<!-- ESCENA FINAL -->
+<div id="final" class="hidden">
+  <div id="finalContent">
+
+    <img src="img/flores.png" alt="Flores">
+
+    <div id="message">
+      <h1>Para ti, con todo mi cariño 🤍</h1>
+
+      <p>Hola, se que tal vez no te esperabas esto y solo espero que realmente no te incomode, quiero que sepas que eres una persona muy importante para mi y eso tu lo sabes,
+        hoy dia viernes 13, la verdad no pensaba estar asi contigo, y te quiero pedir perdon nuevamente, se que eres una personamaravillosa, una buena mujer, inteligente, 
+        honrada y sobre todo hermosa, porque para vi eres hermosa y eso te lo he dicho un monton de veces, se que no deberia de hablar de esto tal vez y perdon si te molesta,
+        pero me enamore de tus ojos, no de tu cuerpo, tus ojos fueron como aquella luz q alumbro mi camino, tu cariño, tus abrazos, tus besos, fueron fundamental para mi, para
+        seguir de pie.
+        Te agradezco por todo lo que hemos vivido, por lo bien que me has hecho y por lo mucho que me amaste, pero asi pase lo que pase estare para ti, realmente espero que te 
+        encuentres bien y que esto te guste, mi niña siempre seras mi viernes 13, porque tu eres todo lo que busco y dejare de amarte hazta mi ultimo suspiro.
+        Muchas gracias Mi Pandita por todo lo que hiciste por mi.
+      </p>
+      <p>Atte: Tu Winnie Pooh</p>
+      <p>Feliz Viernes 13 💕</p>
+    </div>
+
+  </div>
+
+  <div id="audioContainer">
+    <audio id="music" src="music/viernes13.mp3" controls></audio>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

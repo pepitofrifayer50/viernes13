@@ -1,0 +1,224 @@
+/* ===== RESET ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Evita selección rara en móvil */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(#fde2e4, #fff1f2);
+  overflow: hidden;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* ===== JUEGO ===== */
+#game {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Camino */
+#path {
+  position: absolute;
+  left: 80px;
+  top: 80px;
+  width: calc(100% - 160px);
+  height: calc(100% - 220px);
+  border: 4px dashed #f4a7b9;
+  border-radius: 25px;
+  background: rgba(255, 182, 193, 0.08);
+  pointer-events: none;
+}
+
+/* Jugador */
+#player {
+  width: 30px;
+  height: 30px;
+  background: #ffb6c1;
+  border-radius: 50%;
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  box-shadow: 0 0 10px rgba(255, 182, 193, 0.7);
+  transition: top 0.1s linear, left 0.1s linear;
+}
+
+/* Puerta */
+#door {
+  width: 50px;
+  height: 75px;
+  background: #c48b9f;
+  position: absolute;
+  top: calc(80px + 20px);   /* dentro del camino */
+  left: calc(100% - 80px - 70px); /* borde derecho del camino */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Letra E */
+#doorHint {
+  position: absolute;
+  top: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  color: #c48b9f;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Texto de ayuda */
+#hint {
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255,255,255,0.65);
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  color: #a45c72;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  backdrop-filter: blur(6px);
+}
+
+/* ===== CONTROLES MÓVIL ===== */
+#mobileControls {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+#mobileControls button {
+  font-size: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.9);
+  color: #a45c72;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  cursor: pointer;
+}
+
+/* Hover solo para PC */
+@media (hover: hover) {
+  #mobileControls button:hover {
+    transform: scale(1.1);
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+/* ===== FINAL ===== */
+#final {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#finalContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 20px;
+}
+
+#finalContent img {
+  width: 450px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+#message {
+  max-width: 420px;
+}
+
+#message h1 {
+  color: #a45c72;
+  margin-bottom: 15px;
+}
+
+#message p {
+  color: #7a3e50;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+/* Audio centrado */
+#audioContainer {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  #finalContent {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ===== SELECCIÓN DE DISPOSITIVO ===== */
+#deviceSelect {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(#fde2e4, #fff1f2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+#deviceBox {
+  background: rgba(255,255,255,0.85);
+  padding: 40px;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+#deviceBox h2 {
+  color: #a45c72;
+  margin-bottom: 25px;
+}
+
+#deviceBox button {
+  font-size: 18px;
+  padding: 12px 28px;
+  margin: 10px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  background: #ffb6c1;
+  color: #7a3e50;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Hover solo PC */
+@media (hover: hover) {
+  #deviceBox button:hover {
+    transform: scale(1.08);
+  }
+}
